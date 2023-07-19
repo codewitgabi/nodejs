@@ -1,0 +1,11 @@
+{
+  "name": "tutorial",
+  "version": "1.0.1",
+  "description": "This is my first day at node.js and I'm going to make it one hell of a time. Not really switching from django to express but I need to up my game. So therefore, thus is a challenge for me.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Michael Ojomakpene",
+  "license": "MIT"
+}
