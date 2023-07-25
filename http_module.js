@@ -32,7 +32,7 @@ http.get(e1, (data) => {
   console.log(e.message)
 })
 
-const req = http.request({
+const options = {
   "hostname": "localhost",
   "port": 8000,
   "method": "GET",
@@ -40,7 +40,9 @@ const req = http.request({
   "headers": {
     "Content-Type": "application/json"
   }
-}, (res) => {
+};
+
+const req = http.request(options, (res) => {
   let data = "";
 
   res.on("data", (chunk) => {

@@ -10,6 +10,18 @@ http.createServer((req, res) => {
       "Content-Type": "text/html"
     });
 
-    res.end(template);;
+    res.end(template);
+
+    if (req.method === "POST") {
+      let data = "";
+
+      req.on("data", (chunk) => {
+        data += chunk;
+      })
+
+      req.on("end", () => {
+        console.log(data.split("&"));
+      })
+    }
   }
 }).listen(8000)

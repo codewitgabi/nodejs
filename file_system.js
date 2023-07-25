@@ -70,10 +70,28 @@ fs.readFileSync("new.txt", "utf-8")
 /* Write to a file */
 fs.writeFileSync("write.txt", "Written from Node.js", "utf-8", "w");
 
+/* Delete a file */
+fs.unlink("write.txt", (error) => {
+  console.log(error ? error: "write.txt deleted successfully.");
+})
+
 /* Check if a file exists */
 fs.exists("callback.js", (value) => {
   console.log(value ? "file exists": "File does not exist");
 })
+
+/*
+ * Read large files
+ * When reading larger files, it is beter to use fs.createReadStream() rather than fs.readFile() to prevent running out of buffer.
+ */
+const readStream = fs.createReadStream("largeFile.txt", "utf-8");
+const writeStream = fs.createWriteStream("writeLargeFile.txt", "utf8");
+
+readStream.on("data", (chunk) => {
+  writeStream.write(chunk);
+  console.log(chunk);
+});
+
 
 // fs.writeFile(filename, data, [, options], callback)
 
