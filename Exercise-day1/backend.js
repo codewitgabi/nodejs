@@ -1,18 +1,21 @@
 const http = require("http");
 const fs = require("fs");
+const querystring = require("querystring");
 
+const PORT = process.argv[2] ? process.argv[2]: 3000;
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   if (req.url === "/") {
-    const template = fs.readFileSync("index.html");
+    const template = fs.createReadStream("index.html");
 
     res.writeHead(200, {
       "Content-Type": "text/html"
     });
 
-    res.end(template);
+    template.pipe(res);
 
     if (req.method === "POST") {
+      console.log("[INFO ] POST / OK")
       let data = "";
 
       req.on("data", (chunk) => {
@@ -20,8 +23,14 @@ http.createServer((req, res) => {
       })
 
       req.on("end", () => {
-        console.log(data.split("&"));
+        const formData = querystring.parse(data);
+        console.log("user " + formData.name);
+        console.log("message " + formData.message);
       })
     }
   }
-}).listen(8000)
+})
+
+server.listen(PORT, () => {
+  console.log(`[INFO ] Server listening at http://localhost:${ PORT }`);
+})
