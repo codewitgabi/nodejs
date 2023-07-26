@@ -25,7 +25,6 @@ function deepEqual(actual, expected) {
   }
 
   // Object comparison
-  
   /*
   if (actual.constructor === Object && expected.constructor === Object) {
     if (Object.keys(actual) !== Object.keys(expected)) {
@@ -39,7 +38,7 @@ function deepEqual(actual, expected) {
     return false;
   }
 }
-console.log(deepEqual({a: 2}, {a: 2}))
+// console.log(deepEqual({a: 2}, {a: 2}))
 module.exports = {
   deepEqual
 };
