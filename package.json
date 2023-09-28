@@ -4,8 +4,19 @@
   "description": "This is my first day at node.js and I'm going to make it one hell of a time. Not really switching from django to express but I need to up my game. So therefore, thus is a challenge for me.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -w --diffs"
   },
   "author": "Gabriel Michael Ojomakpene",
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "test": "test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codewitgabi/nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codewitgabi/nodejs/issues"
+  },
+  "homepage": "https://github.com/codewitgabi/nodejs#readme"
 }
