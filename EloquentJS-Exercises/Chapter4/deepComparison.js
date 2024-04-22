@@ -24,15 +24,7 @@ function deepEqual(actual, expected) {
     }
   }
 
-  // Object comparison
-  /*
-  if (actual.constructor === Object && expected.constructor === Object) {
-    if (Object.keys(actual) !== Object.keys(expected)) {
-      return false;
-    } else {
-      return Object.keys(actual).every(val => Object.keys(expected).includes(val))
-    }
-  }*/
+  // Object comparison here...
 
   if (typeof actual !== typeof expected) {
     return false;

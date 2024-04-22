@@ -2,7 +2,7 @@ const countBs = (str) => {
   /**
    * Count the number of uppercase 'B' in the given string
    */
-  count = 0;
+  let count = 0;
   for (let char of str) {
     if (char === "B") {
       count++;

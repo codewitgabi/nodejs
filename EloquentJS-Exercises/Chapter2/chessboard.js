@@ -15,7 +15,7 @@ const print_even_row = (col) => {
   console.log(box.join(""));
 }
 
-const print_odd_row = () => {
+const print_odd_row = (col) => {
   /* Prints columns for odd rows */
   let box = [];
   for (let i = 0; i < col; i++) {
